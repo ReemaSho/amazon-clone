@@ -8,7 +8,7 @@ It is powered by [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaS
 
 Please Have a look at the link below to see the website's layout for desktop.
 
-[Figma](https://www.figma.com/file/6q2dSJ1VpRwIEBphuzKVRd/amazone-clone?node-id=0%3A1)
+[Amazon clone](https://www.figma.com/file/6q2dSJ1VpRwIEBphuzKVRd/amazone-clone?node-id=0%3A1)
 
 ## Features
 
