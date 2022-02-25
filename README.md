@@ -1,4 +1,4 @@
-# Amazon App
+# Amazon clone
 
 This app is a mimic for some features of amazon website.
 
