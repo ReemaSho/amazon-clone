@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# Amazon clone
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This app is a mimic for some features of amazon website.
 
-## Available Scripts
+It is powered by [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [React](https://reactjs.org/), [React Router](https://reactrouter.com/docs/en/v6/getting-started/overview), [Firebase](https://firebase.google.com/?gclid=Cj0KCQiAmeKQBhDvARIsAHJ7mF7rJ29dNE0MxeR6gwd-VqI8IKpNNsHNJ0YvFRMQY7ck93OE45wRgusaAjn_EALw_wcB&gclsrc=aw.ds) and got bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-In the project directory, you can run:
+# UI Design
 
-### `npm start`
+Please Have a look at the link below to see the website's layout for desktop.
+[Figma](https://www.figma.com/file/6q2dSJ1VpRwIEBphuzKVRd/amazone-clone?node-id=0%3A1)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Must have
 
-### `npm test`
+- [ ] Home page route.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  - [ ] Page displays products.
+  - [ ] Page displays user name if he is signed in.
+  - [ ] User can search products.
+  - [ ] User can add products to the basket.
+  - [ ] Page keeps track number of products in the basket.
 
-### `npm run build`
+- [ ] Signing page route.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  - [ ] User can sign in if he/she already has an account.
+  - [ ] If User tries to sign in with incorrect credentials, an alert message pops up.
+  - [ ] User can register.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- [ ] Checkout page route.
+  - [ ] User can add products to the basket even if he/she is not signed in.
+  - [ ] User can remove products from the basket.
+  - [ ] Page has subtotal component.
+- [ ] App layout is responsive for mobile and tablet.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Nice to have
 
-### `npm run eject`
+- [ ] Home page has a responsive header carousel component.
+- [ ] User can filter products based on Categories.
+- [ ] Single product page.
+- [ ] User cat review a product.
+- [ ] Bestsellers route based on rating.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Setup
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Clone this repo to your desktop and in the project directory, run `npm install` to install all the dependencies.
+Then run the application using `npm start`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+To Launch the test runner, run `npm test`.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Final words
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you like this project, please leave a star :star::star::star:
