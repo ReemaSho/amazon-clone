@@ -1,15 +1,15 @@
-# Amazon clone
+# Amazon App
 
 This app is a mimic for some features of amazon website.
 
 It is powered by [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript), [React](https://reactjs.org/), [React Router](https://reactrouter.com/docs/en/v6/getting-started/overview), [Firebase](https://firebase.google.com/?gclid=Cj0KCQiAmeKQBhDvARIsAHJ7mF7rJ29dNE0MxeR6gwd-VqI8IKpNNsHNJ0YvFRMQY7ck93OE45wRgusaAjn_EALw_wcB&gclsrc=aw.ds) and got bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-# UI Design
+## UI Designs
 
 Please Have a look at the link below to see the website's layout for desktop.
 [Figma](https://www.figma.com/file/6q2dSJ1VpRwIEBphuzKVRd/amazone-clone?node-id=0%3A1)
 
-# Features
+## Features
 
 ### Must have
 
@@ -38,7 +38,7 @@ Please Have a look at the link below to see the website's layout for desktop.
 - [ ] Home page has a responsive header carousel component.
 - [ ] User can filter products based on Categories.
 - [ ] Single product page.
-- [ ] User cat review a product.
+- [ ] User can review a product.
 - [ ] Bestsellers route based on rating.
 
 ## Setup
@@ -48,6 +48,6 @@ Then run the application using `npm start`.
 
 To Launch the test runner, run `npm test`.
 
-# Final words
+## Final words
 
 If you like this project, please leave a star :star::star::star:
