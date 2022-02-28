@@ -1,0 +1,76 @@
+@import "../colors.css";
+@import "../mixins.scss";
+.header__container {
+    background-color: $darkBlue;
+    @include alignITemsCenter();
+}
+
+.header__logoLink {
+    width: 100px;
+    margin: 0 1%;
+    margin-top: 1%;
+    .header__logo {
+        width: 80%;
+        object-fit: contain;
+    }
+}
+
+.header__search {
+    display: flex;
+    flex: 1;
+    margin: 0 10px;
+    &:focus-within {
+        border: 2px inset $darkOrange;
+        background-color: $darkOrange;
+    }
+    input:focus-visible {
+        outline-style: none;
+    }
+    .header__searchInput {
+        padding: 0.5%;
+        border: none;
+        width: 100%;
+        border-radius: 5px 0px 0px 5px;
+    }
+    .header__searchIcon {
+        padding: 0.5%;
+        background-color: $lightOrange;
+        border-radius: 0px 5px 5px 0px;
+        &:hover {
+            cursor: pointer;
+            background-color: $darkOrange;
+        }
+    }
+}
+
+.header__nav {
+    @include alignITemsCenter();
+    justify-content: space-evenly;
+    .header__navLink {
+        margin: 3px 10px;
+        color: $white;
+        padding: 5px;
+        text-decoration: none;
+        &:hover {
+            padding: 4px;
+            border: 1px inset $white;
+        }
+        .header__option {
+            display: flex;
+            flex-direction: column;
+            margin: 0 10px;
+            .header__optionLineOne {
+                @include fontStyle(15px, 16px, 400);
+            }
+            .header__optionLineTwo {
+                @include fontStyle(15px, 17px, 800);
+            }
+        }
+        .header__optionBasket {
+            @include alignITemsCenter();
+            .header__basketCount {
+                margin: 0 10px;
+            }
+        }
+    }
+}
