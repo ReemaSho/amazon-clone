@@ -1,9 +1,0 @@
-{
-    "version": 3,
-    "mappings": "AAAA,AAAA,cAAc,CAAC;EACX,UAAU,EAAE,0DAAiF;CAChG",
-    "sources": [
-        "carouselSlider.scss"
-    ],
-    "names": [],
-    "file": "carouselSlider.css"
-}
