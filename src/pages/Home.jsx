@@ -1,7 +1,13 @@
-import React from "react";
+import Header from "../containers/Header";
+import CarouselSlider from "../components/CarouselSlider";
 
 const Home = () => {
-  return <div>Home</div>;
+  return (
+    <>
+      <Header />
+      <CarouselSlider />
+    </>
+  );
 };
 
 export default Home;
