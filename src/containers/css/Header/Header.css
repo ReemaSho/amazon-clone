@@ -116,4 +116,43 @@
 .header__nav .header__navLink .header__optionBasket .header__basketCount {
   margin: 0 10px;
 }
+
+.display-mobile {
+  display: none;
+}
+
+@media screen and (max-width: 600px) {
+  .display-mobile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .display-desktop {
+    display: none;
+  }
+  .header {
+    background-color: #131921;
+    padding-bottom: 5px;
+  }
+  .header .header__container {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .header .header__container .header__logoLink {
+    width: 70px;
+  }
+  .header .header__search {
+    width: 98%;
+    margin: auto;
+  }
+  .header__nav .header__navLink {
+    margin: 0px;
+    color: #fff;
+    padding: 5px;
+  }
+  .header__nav .header__navLink .header__navLink .header__optionBasket .header__basketCount {
+    margin: 0 2px;
+  }
+}
 /*# sourceMappingURL=Header.css.map */

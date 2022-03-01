@@ -1,4 +1,4 @@
-@import "../colors.css";
+@import "../colors.scss";
 @import "../mixins.scss";
 .header__container {
     background-color: $darkBlue;
@@ -70,6 +70,49 @@
             @include alignITemsCenter();
             .header__basketCount {
                 margin: 0 10px;
+            }
+        }
+    }
+}
+
+.display-mobile {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    //
+    .display-mobile {
+        display: flex;
+    }
+    .display-desktop {
+        display: none;
+    }
+    //
+    .header {
+        background-color: $darkBlue;
+        padding-bottom: 5px;
+        .header__container {
+            justify-content: space-between;
+            .header__logoLink {
+                width: 70px;
+            }
+        }
+        .header__search {
+            width: 98%;
+            margin: auto;
+        }
+    }
+    .header__nav {
+        .header__navLink {
+            margin: 0px;
+            color: $white;
+            padding: 5px;
+            .header__navLink {
+                .header__optionBasket {
+                    .header__basketCount {
+                        margin: 0 2px;
+                    }
+                }
             }
         }
     }
