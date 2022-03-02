@@ -1,17 +1,23 @@
-import Product from "../components/Products/Product";
 import ProductsList from "../components/Products/ProductsList";
-import useCollectionData from "../Hooks/useCollectionData";
-const ProductsController = () => {
-  const { collectionDocs, loading, error } = useCollectionData("products");
 
+import { useContext } from "react";
+import { SearchProductsContext } from "../context/SearchProductsContext";
+const ProductsController = () => {
+  const { searchValue, matchedProducts, handleSearch, loading, error } =
+    useContext(SearchProductsContext);
   if (error) {
     return <div>{error}</div>;
   }
-
   if (loading) {
     return <div>Loading...</div>;
   }
-  return <ProductsList productsList={collectionDocs} />;
+  // console.log(matchedProducts);
+  if (matchedProducts && handleSearch) {
+    return (
+      <ProductsList productsList={matchedProducts} searchValue={searchValue} />
+    );
+  }
+  return <h1>HomePage</h1>;
 };
 
 export default ProductsController;
