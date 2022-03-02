@@ -1,12 +1,12 @@
 import Header from "../containers/Header";
 import CarouselSlider from "../components/CarouselSlider";
-import CardsController from "../containers/CardsController";
+import ProductsController from "../containers/ProductsController";
 const Home = () => {
   return (
     <>
       <Header />
       <CarouselSlider />
-      <CardsController />
+      <ProductsController />
     </>
   );
 };
