@@ -4,6 +4,7 @@ import Login from "./pages/Login";
 import Checkout from "./pages/Checkout";
 import { SearchProductsProvider } from "./context/SearchProductsContext";
 import "./App.scss";
+import Products from "./pages/Products";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route path="/" element={<Home />}></Route>
           <Route path="/login" element={<Login />}></Route>
           <Route path="/checkout" element={<Checkout />}></Route>
+          <Route path="/products" element={<Products />}></Route>
         </Routes>
       </SearchProductsProvider>
     </Router>

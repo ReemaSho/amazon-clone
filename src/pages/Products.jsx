@@ -1,13 +1,14 @@
+import React from "react";
 import Header from "../containers/Header";
-import CarouselSlider from "../components/CarouselSlider";
 import ProductsController from "../containers/ProductsController";
-const Home = () => {
+
+const Products = () => {
   return (
     <>
       <Header />
-      <CarouselSlider />
+      <ProductsController />
     </>
   );
 };
 
-export default Home;
+export default Products;

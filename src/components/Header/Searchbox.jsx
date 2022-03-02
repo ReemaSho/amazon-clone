@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 const Searchbox = ({ screenSize, onChange, onClick, value }) => {
   const classes = `${screenSize} header__search`;
@@ -10,12 +11,14 @@ const Searchbox = ({ screenSize, onChange, onClick, value }) => {
         value={value}
         type="text"
       />
-      <SearchIcon
-        className="header__searchIcon"
-        onClick={() => {
-          onClick();
-        }}
-      ></SearchIcon>
+      <Link to="/products">
+        <SearchIcon
+          className="header__searchIcon"
+          onClick={() => {
+            onClick();
+          }}
+        ></SearchIcon>
+      </Link>
     </div>
   );
 };
