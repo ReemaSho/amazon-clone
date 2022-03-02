@@ -1,0 +1,14 @@
+@import "../../containers/sass/colors.scss";
+@import "../../containers/sass/mixins.scss";
+.error {
+    @include alignITemsCenter;
+    flex-direction: column;
+    padding: 5%;
+    color: $lightGray;
+    .error__imageText {
+        width: 80%;
+    }
+    .error__imageDog {
+        width: 60%;
+    }
+}

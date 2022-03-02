@@ -1,22 +1,25 @@
 import ProductsList from "../components/Products/ProductsList";
-
 import { useContext } from "react";
 import { SearchProductsContext } from "../context/SearchProductsContext";
+import Error from "../components/Error";
 const ProductsController = () => {
-  const { matchedProducts, setMatchesProducts, handleSearch, loading, error } =
+  const { matchedProducts, handleSearch, collectionDocs, loading, error } =
     useContext(SearchProductsContext);
   if (error) {
-    return <div>{error}</div>;
+    return <Error />;
   }
   if (loading) {
-    return <div>Loading...</div>;
+    return <div className="products__loading">Loading...</div>;
   }
-  // console.log(matchedProducts);
   if (matchedProducts && handleSearch) {
-    return <ProductsList productsList={matchedProducts} />;
+    return matchedProducts.length ? (
+      <ProductsList productsList={matchedProducts} />
+    ) : (
+      <ProductsList productsList={collectionDocs} />
+    );
   }
-  // setMatchesProducts(null);
-  return <h1>HomePage</h1>;
+
+  return <ProductsList productsList={collectionDocs} />;
 };
 
 export default ProductsController;
