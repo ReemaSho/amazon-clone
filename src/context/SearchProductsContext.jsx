@@ -4,22 +4,30 @@ const SearchProductsContext = createContext();
 
 const SearchProductsProvider = ({ children }) => {
   const { collectionDocs, loading, error } = useCollectionData("products");
-
+  const [searchValue, setSearchValue] = useState("");
   const [matchedProducts, setMatchesProducts] = useState(null);
   const [handleSearch, setHandleSearch] = useState(false);
 
   const getSearchValue = (e) => {
     if (e.target.value) {
-      const searchValue = e.target.value.toLowerCase();
-
+      const value = e.target.value.toLowerCase();
+      // setSearchValue((prev) => console.log(prev));
+      setSearchValue(value);
       setHandleSearch(false);
-      getMatchedProducts(searchValue);
+      // getMatchedProducts(value);
     } else {
       setMatchesProducts(null);
     }
   };
-
+  const onSubmit = () => {
+    console.log(searchValue);
+    setHandleSearch(true);
+    getMatchedProducts(searchValue);
+    setSearchValue("");
+    // setMatchesProducts(null);
+  };
   const getMatchedProducts = (searchValue) => {
+    console.log(searchValue);
     const products = [];
     collectionDocs.forEach((doc) => {
       const title = doc.title.toLowerCase();
@@ -37,7 +45,9 @@ const SearchProductsProvider = ({ children }) => {
       value={{
         getSearchValue,
         matchedProducts,
-        setHandleSearch,
+        setMatchesProducts,
+        searchValue,
+        onSubmit,
         handleSearch,
         loading,
         error,

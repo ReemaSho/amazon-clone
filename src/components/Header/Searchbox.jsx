@@ -1,14 +1,19 @@
 import React from "react";
 import SearchIcon from "@mui/icons-material/Search";
-const Searchbox = ({ screenSize, onChange, onClick }) => {
+const Searchbox = ({ screenSize, onChange, onClick, value }) => {
   const classes = `${screenSize} header__search`;
   return (
     <div className={classes}>
-      <input className="header__searchInput" onChange={onChange} type="text" />
+      <input
+        className="header__searchInput"
+        onChange={onChange}
+        value={value}
+        type="text"
+      />
       <SearchIcon
         className="header__searchIcon"
-        onClick={(e) => {
-          onClick(true);
+        onClick={() => {
+          onClick();
         }}
       ></SearchIcon>
     </div>
