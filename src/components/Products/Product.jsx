@@ -1,6 +1,5 @@
 import React from "react";
 import StarIcon from "@mui/icons-material/Star";
-//import "../sass/product.scss";
 const Product = ({ id, title, price, images, rating }) => {
   return (
     <div className="Product">

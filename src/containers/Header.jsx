@@ -9,7 +9,6 @@ const Header = () => {
   const { getSearchValue, setHandleSearch, searchValue, onSubmit } = useContext(
     SearchProductsContext
   );
-  // console.log(getSearchValue);
   return (
     <div className="header">
       <nav className="header__container">
@@ -23,6 +22,7 @@ const Header = () => {
         <Links desktopSize="display-desktop" mobileSize="display-mobile" />
       </nav>
       <Searchbox
+        value={searchValue}
         onChange={getSearchValue}
         onClick={setHandleSearch}
         screenSize="display-mobile"
