@@ -1,10 +1,8 @@
-@import "../../containers/sass/colors.scss";
 @import "../../containers/sass/mixins.scss";
 .error {
-    @include alignITemsCenter;
-    flex-direction: column;
+    @include alignITemsCenter(column);
+    // flex-direction: column;
     padding: 5%;
-    color: $lightGray;
     .error__imageText {
         width: 80%;
     }

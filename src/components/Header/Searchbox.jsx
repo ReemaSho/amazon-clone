@@ -11,9 +11,8 @@ const Searchbox = ({ screenSize, onChange, onClick, value }) => {
         value={value}
         type="text"
       />
-      <Link to="/products">
+      <Link className="header__searchIcon" to="/products">
         <SearchIcon
-          className="header__searchIcon"
           onClick={() => {
             onClick();
           }}

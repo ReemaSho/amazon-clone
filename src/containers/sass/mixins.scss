@@ -1,6 +1,7 @@
-@mixin alignITemsCenter {
+@mixin alignITemsCenter($direction) {
     display: flex;
     align-items: center;
+    flex-direction: $direction;
 }
 
 @mixin fontStyle($size, $line-Height, $weight) {

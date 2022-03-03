@@ -2,7 +2,8 @@
 @import "../mixins.scss";
 .header__container {
     background-color: $darkBlue;
-    @include alignITemsCenter();
+    padding: 0.5%;
+    @include alignITemsCenter(row);
 }
 
 .header__logoLink {
@@ -18,7 +19,7 @@
 .header__search {
     display: flex;
     flex: 1;
-    margin: 0 10px;
+    margin: 0 5px;
     &:focus-within {
         border: 2px inset $darkOrange;
         background-color: $darkOrange;
@@ -27,24 +28,27 @@
         outline-style: none;
     }
     .header__searchInput {
-        padding: 0.5%;
+        padding: 1%;
         border: none;
-        width: 100%;
+        width: 95%;
         border-radius: 5px 0px 0px 5px;
     }
     .header__searchIcon {
-        padding: 0.5%;
+        width: 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         background-color: $lightOrange;
         border-radius: 0px 5px 5px 0px;
+        color: $darkBlue;
         &:hover {
-            cursor: pointer;
             background-color: $darkOrange;
         }
     }
 }
 
 .header__nav {
-    @include alignITemsCenter();
+    @include alignITemsCenter(row);
     justify-content: space-evenly;
     .header__navLink {
         margin: 3px 10px;
@@ -67,7 +71,7 @@
             }
         }
         .header__optionBasket {
-            @include alignITemsCenter();
+            @include alignITemsCenter(row);
             .header__basketCount {
                 margin: 0 10px;
             }
@@ -77,6 +81,17 @@
 
 .display-mobile {
     display: none;
+}
+
+@media screen and (max-width: 900px) {
+    .header__search {
+        .header__searchInput {
+            width: 85%;
+        }
+        .header__searchIcon {
+            width: 15%;
+        }
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -100,6 +115,14 @@
         .header__search {
             width: 98%;
             margin: auto;
+        }
+    }
+    .header__search {
+        .header__searchInput {
+            width: 93%;
+        }
+        .header__searchIcon {
+            width: 7%;
         }
     }
     .header__nav {
