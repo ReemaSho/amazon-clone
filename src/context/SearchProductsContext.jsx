@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import useCollectionData from "../Hooks/useCollectionData";
+import { useNavigate } from "react-router-dom";
 const SearchProductsContext = createContext();
 
 const SearchProductsProvider = ({ children }) => {
@@ -7,6 +8,7 @@ const SearchProductsProvider = ({ children }) => {
   const [searchValue, setSearchValue] = useState("");
   const [matchedProducts, setMatchesProducts] = useState(null);
   const [handleSearch, setHandleSearch] = useState(false);
+  const navigate = useNavigate();
 
   const getSearchValue = (e) => {
     setSearchValue("");
@@ -14,8 +16,17 @@ const SearchProductsProvider = ({ children }) => {
       const value = e.target.value.toLowerCase();
       setSearchValue(value);
       setHandleSearch(false);
-    } else {
-      setMatchesProducts(null);
+    }
+  };
+  const handleKePress = (e) => {
+    const toProductsPage = () => {
+      navigate(`/products`);
+    };
+    if (e.key === "Enter") {
+      setHandleSearch(true);
+      getMatchedProducts(searchValue);
+      toProductsPage();
+      setSearchValue("");
     }
   };
   const onSubmit = () => {
@@ -27,7 +38,6 @@ const SearchProductsProvider = ({ children }) => {
     const products = [];
     collectionDocs.forEach((doc) => {
       const title = doc.title.toLowerCase();
-
       const regex = new RegExp(String.raw`\b${searchValue}\b`);
       if (title.search(regex) !== -1) {
         products.push(doc);
@@ -42,8 +52,8 @@ const SearchProductsProvider = ({ children }) => {
         getSearchValue,
         matchedProducts,
         setMatchesProducts,
-        searchValue,
         onSubmit,
+        handleKePress,
         handleSearch,
         collectionDocs,
         loading,
