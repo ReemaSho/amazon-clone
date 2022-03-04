@@ -22,7 +22,7 @@ const SingleProduct = ({
           autoPlay={false}
           showArrows={true}
           showStatus={false}
-          infiniteLoop={false}
+          infiniteLoop={true}
           swipeable={true}
           dynamicHeight={true}
         >

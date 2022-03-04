@@ -1,15 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ShoppingCartCheckoutTwoToneIcon from "@mui/icons-material/ShoppingCartCheckoutTwoTone";
-const Basket = () => {
+import { useStateValue } from "../../context/StateContext";
+const Cart = () => {
+  const [{ Cart }] = useStateValue();
   return (
     <Link to="/checkout" className="header__navLink">
-      <div className="header__optionBasket">
+      <div className="header__optionCart">
         <ShoppingCartCheckoutTwoToneIcon className="header__optionLineTwo" />
-        <span className="header__optionLineTwo header__basketCount">0</span>
+        <span className="header__optionLineTwo header__CartCount">
+          {Cart?.length}
+        </span>
       </div>
     </Link>
   );
 };
 
-export default Basket;
+export default Cart;

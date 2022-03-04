@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
-import Basket from "./Basket";
+import Cart from "./Cart";
 
 const Links = ({ mobileSizeClass, desktopSizeClass }) => {
   const mobileSizeClasses = `${mobileSizeClass} header__navLink`;
@@ -26,7 +26,7 @@ const Links = ({ mobileSizeClass, desktopSizeClass }) => {
           <PersonOutlineIcon />
         </div>
       </Link>
-      <Basket />
+      <Cart />
     </div>
   );
 };

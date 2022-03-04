@@ -3,14 +3,17 @@ import { useContext } from "react";
 import Error from "../components/Error";
 import SingleProduct from "../components/SingleProduct/SingleProduct";
 import AddToCart from "../components/SingleProduct/AddToCart";
+import { useStateValue } from "../context/StateContext";
 import "./sass/singleProduct.scss";
 const SingleProductController = () => {
   const { document, loading, error } = useContext(SingleProductContext);
+  const [{ basket }, dispatch] = useStateValue();
   if (loading) {
     return null;
   }
   if (document) {
     const {
+      id,
       title,
       rating,
       images,
@@ -19,6 +22,9 @@ const SingleProductController = () => {
       discountedPrice,
       description,
     } = document;
+    const addToCard = () => {
+      dispatch({ type: "ADD_TO_CART", item: { id: id } });
+    };
     const ratingAverage = average(rating);
     let savingAmount = "";
     let regularPriceClasses = "singleProduct__regularPrice";
@@ -49,7 +55,7 @@ const SingleProductController = () => {
           savingAmount={savingAmount}
           description={description}
         ></SingleProduct>
-        <AddToCart price={price}></AddToCart>
+        <AddToCart price={price} addToCard={addToCard}></AddToCart>
       </div>
     );
   }

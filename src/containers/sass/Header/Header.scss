@@ -70,11 +70,11 @@
                 @include fontStyle(15px, 17px, 800);
             }
         }
-        .header__optionBasket {
+        .header__optionCart {
             @include alignITemsCenter(row);
             font-weight: bolder;
-            .header__basketCount {
-                margin: 0 10px;
+            .header__CartCount {
+                margin: 0 3px;
             }
         }
     }
@@ -132,8 +132,8 @@
             color: $white;
             padding: 5px;
             .header__navLink {
-                .header__optionBasket {
-                    .header__basketCount {
+                .header__optionCart {
+                    .header__CartCount {
                         margin: 0 1px;
                     }
                 }
