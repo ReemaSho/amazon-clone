@@ -9,7 +9,7 @@ const ProductsController = () => {
     return <Error />;
   }
   if (loading) {
-    return <div className="products__loading">Loading...</div>;
+    return null;
   }
   if (matchedProducts && handleSearch) {
     return matchedProducts.length ? (
