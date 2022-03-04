@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import StarIcon from "@mui/icons-material/Star";
-const Product = ({ id, title, price, images, rating, offer }) => {
+import WhatshotSharpIcon from "@mui/icons-material/WhatshotSharp";
+const Product = ({ id, title, offer, price, images, rating }) => {
   const navigate = useNavigate();
   const toSingleProductPage = () => {
     navigate(`/products/${id}`);
@@ -38,6 +39,9 @@ const Product = ({ id, title, price, images, rating, offer }) => {
         >
           <small>$</small>
           <strong>{price}</strong>
+          <WhatshotSharpIcon
+            className={offer ? "product__priceFire" : "display_none"}
+          />
         </p>
 
         <div className="product__extraDetails">

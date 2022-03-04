@@ -3,22 +3,18 @@ import { useContext } from "react";
 import { SearchProductsContext } from "../context/SearchProductsContext";
 import Error from "../components/Error";
 const ProductsController = () => {
-  const { matchedProducts, handleSearch, collectionDocs, loading, error } =
+  const { matchedProducts, activeSearch, collectionDocs, loading, error } =
     useContext(SearchProductsContext);
-  if (error) {
-    return <Error />;
-  }
+
   if (loading) {
     return null;
   }
-  if (matchedProducts && handleSearch) {
-    return matchedProducts.length ? (
-      <ProductsList productsList={matchedProducts} />
-    ) : (
-      <ProductsList productsList={collectionDocs} />
-    );
+  if (error) {
+    return <Error />;
   }
-
+  if (matchedProducts.length && activeSearch) {
+    return <ProductsList productsList={matchedProducts} />;
+  }
   return <ProductsList productsList={collectionDocs} />;
 };
 

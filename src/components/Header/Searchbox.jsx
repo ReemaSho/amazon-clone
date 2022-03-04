@@ -1,22 +1,28 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
-const Searchbox = ({ screenSize, onChange, onClick, handleKePress }) => {
-  const classes = `${screenSize} header__search`;
+
+const Searchbox = ({
+  screenSizeClass,
+  getSearchValue,
+  handleSearchEvent,
+  handleKeyPress,
+}) => {
+  const searchBoxContainerClasses = `${screenSizeClass} header__search`;
   return (
-    <div className={classes}>
+    <div className={searchBoxContainerClasses}>
       <input
         className="header__searchInput"
-        onChange={onChange}
-        onKeyPress={handleKePress}
+        onChange={getSearchValue}
+        onKeyPress={handleKeyPress}
         type="text"
       />
-      <Link className="header__searchIcon" to="/products">
-        <SearchIcon
-          onClick={() => {
-            onClick();
-          }}
-        ></SearchIcon>
+      <Link
+        className="header__searchIcon"
+        to="/products"
+        onClick={handleSearchEvent}
+      >
+        <SearchIcon></SearchIcon>
       </Link>
     </div>
   );

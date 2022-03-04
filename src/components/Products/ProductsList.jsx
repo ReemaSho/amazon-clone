@@ -1,4 +1,3 @@
-import React from "react";
 import Product from "./Product";
 import "../sass/products.scss";
 const ProductsList = ({ productsList }) => {
@@ -6,19 +5,19 @@ const ProductsList = ({ productsList }) => {
     return Math.floor(numbers.reduce((a, b) => a + b) / numbers.length);
   };
   const product = productsList.map((product) => {
-    const rating = average(product.rating);
-    const price = product.offer
-      ? product.discountedPrice
-      : product.regularPrice;
+    const { id, title, offer, regularPrice, discountedPrice, images, rating } =
+      product;
+    const ratingAverage = average(rating);
+    const price = offer ? discountedPrice : regularPrice;
     return (
       <Product
-        offer={product.offer}
-        key={product.id}
-        images={product.images}
-        id={product.id}
-        title={product.title}
+        key={id}
+        id={id}
+        title={title}
+        offer={offer}
         price={price}
-        rating={rating}
+        images={images}
+        rating={ratingAverage}
       />
     );
   });

@@ -6,33 +6,34 @@ const SearchProductsContext = createContext();
 const SearchProductsProvider = ({ children }) => {
   const { collectionDocs, loading, error } = useCollectionData("products");
   const [searchValue, setSearchValue] = useState("");
-  const [matchedProducts, setMatchesProducts] = useState(null);
-  const [handleSearch, setHandleSearch] = useState(false);
+  const [matchedProducts, setMatchesProducts] = useState([]);
+  const [activeSearch, setActiveSearch] = useState(false);
   const navigate = useNavigate();
-
   const getSearchValue = (e) => {
-    setSearchValue("");
     if (e.target.value) {
       const value = e.target.value.toLowerCase();
       setSearchValue(value);
-      setHandleSearch(false);
+      setActiveSearch(false);
     }
   };
-  const handleKePress = (e) => {
+  const handleKeyPress = (e) => {
     const toProductsPage = () => {
       navigate(`/products`);
     };
     if (e.key === "Enter") {
-      setHandleSearch(true);
+      setActiveSearch(true);
       getMatchedProducts(searchValue);
       toProductsPage();
-      setSearchValue("");
     }
   };
-  const onSubmit = () => {
-    setHandleSearch(true);
+  const handleSearchEvent = () => {
+    setActiveSearch(true);
     getMatchedProducts(searchValue);
+  };
+  const emptySearchStates = () => {
+    setActiveSearch(false);
     setSearchValue("");
+    setMatchesProducts([]);
   };
   const getMatchedProducts = (searchValue) => {
     const products = [];
@@ -51,10 +52,10 @@ const SearchProductsProvider = ({ children }) => {
       value={{
         getSearchValue,
         matchedProducts,
-        setMatchesProducts,
-        onSubmit,
-        handleKePress,
-        handleSearch,
+        handleSearchEvent,
+        handleKeyPress,
+        activeSearch,
+        emptySearchStates,
         collectionDocs,
         loading,
         error,

@@ -46,10 +46,19 @@
         }
         .product__price {
             color: $cardFontColor;
+            display: flex;
+            align-items: center;
             text-decoration: none;
             @include fontStyle(18px, 20px, 100);
             &:hover {
                 cursor: pointer;
+            }
+            .product__priceFire {
+                margin-left: 5px;
+                color: $darkOrange;
+            }
+            .display_none {
+                display: none;
             }
         }
         .product__extraDetails {
