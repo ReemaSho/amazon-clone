@@ -1,19 +1,26 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import StarIcon from "@mui/icons-material/Star";
 const Product = ({ id, title, price, images, rating, offer }) => {
+  const navigate = useNavigate();
+  const toSingleProductPage = () => {
+    navigate(`/products/${id}`);
+  };
+
   return (
     <div className="product">
       <div className="product__imageContainer">
-        <Link to="/">
-          <img className="product__image" src={images[0]} alt=""></img>
-        </Link>
+        <img
+          className="product__image"
+          src={images[0]}
+          alt=""
+          onClick={() => toSingleProductPage()}
+        ></img>
       </div>
 
       <div className="product__details">
-        <Link className="product__title" to="/">
-          <p className="product__title">{title}</p>
-        </Link>
+        <p className="product__title" onClick={() => toSingleProductPage()}>
+          {title}
+        </p>
 
         <div className="product__rating">
           {Array(rating)
@@ -22,20 +29,21 @@ const Product = ({ id, title, price, images, rating, offer }) => {
               <StarIcon key={i} />
             ))}
         </div>
-        <Link className="product__price" to="/">
-          <p
-            className={
-              offer ? "product__price product__priceOffer" : "product__price"
-            }
-          >
-            <small>$</small>
-            <strong>{price}</strong>
-          </p>
-        </Link>
-        <p className="product__extraDetails">
+
+        <p
+          className={
+            offer ? "product__price product__priceOffer" : "product__price"
+          }
+          onClick={() => toSingleProductPage()}
+        >
+          <small>$</small>
+          <strong>{price}</strong>
+        </p>
+
+        <div className="product__extraDetails">
           <p>Save more with Subscribe & Save</p>
           <p>Shipping Details</p>
-        </p>
+        </div>
       </div>
     </div>
   );
