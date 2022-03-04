@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import SearchIcon from "@mui/icons-material/Search";
 
 const Searchbox = ({
+  searchValue,
   screenSizeClass,
   getSearchValue,
   handleSearchEvent,
@@ -16,6 +17,7 @@ const Searchbox = ({
         onChange={getSearchValue}
         onKeyPress={handleKeyPress}
         type="text"
+        value={searchValue}
       />
       <Link
         className="header__searchIcon"

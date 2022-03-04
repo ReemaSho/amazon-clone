@@ -57,7 +57,7 @@
         text-decoration: none;
         &:hover {
             padding: 4px;
-            border: 1px inset $white;
+            border: 0.5px inset $white;
         }
         .header__option {
             display: flex;
@@ -72,6 +72,7 @@
         }
         .header__optionBasket {
             @include alignITemsCenter(row);
+            font-weight: bolder;
             .header__basketCount {
                 margin: 0 10px;
             }
@@ -133,7 +134,7 @@
             .header__navLink {
                 .header__optionBasket {
                     .header__basketCount {
-                        margin: 0 2px;
+                        margin: 0 1px;
                     }
                 }
             }

@@ -10,6 +10,7 @@ const SearchProductsProvider = ({ children }) => {
   const [activeSearch, setActiveSearch] = useState(false);
   const navigate = useNavigate();
   const getSearchValue = (e) => {
+    setSearchValue("");
     if (e.target.value) {
       const value = e.target.value.toLowerCase();
       setSearchValue(value);
@@ -50,6 +51,7 @@ const SearchProductsProvider = ({ children }) => {
   return (
     <SearchProductsContext.Provider
       value={{
+        searchValue,
         getSearchValue,
         matchedProducts,
         handleSearchEvent,

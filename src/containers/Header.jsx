@@ -7,6 +7,7 @@ import { useContext } from "react";
 import { SearchProductsContext } from "../context/SearchProductsContext";
 const Header = () => {
   const {
+    searchValue,
     getSearchValue,
     handleSearchEvent,
     handleKeyPress,
@@ -17,6 +18,7 @@ const Header = () => {
       <nav className="header__container">
         <Logo emptySearchStates={emptySearchStates} />
         <Searchbox
+          searchValue={searchValue}
           getSearchValue={getSearchValue}
           handleSearchEvent={handleSearchEvent}
           handleKeyPress={handleKeyPress}
@@ -28,6 +30,7 @@ const Header = () => {
         />
       </nav>
       <Searchbox
+        searchValue={searchValue}
         getSearchValue={getSearchValue}
         handleSearchEvent={handleSearchEvent}
         handleKePress={handleKeyPress}
