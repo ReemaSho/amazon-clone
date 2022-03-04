@@ -1,9 +1,9 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useContext } from "react";
 import useCollectionData from "../Hooks/useCollectionData";
 import { useNavigate } from "react-router-dom";
 const SearchProductsContext = createContext();
 
-const SearchProductsProvider = ({ children }) => {
+export const SearchProductsProvider = ({ children }) => {
   const { collectionDocs, loading, error } = useCollectionData("products");
   const [searchValue, setSearchValue] = useState("");
   const [matchedProducts, setMatchesProducts] = useState([]);
@@ -67,5 +67,4 @@ const SearchProductsProvider = ({ children }) => {
     </SearchProductsContext.Provider>
   );
 };
-
-export { SearchProductsContext, SearchProductsProvider };
+export const useSearchProductsContext = () => useContext(SearchProductsContext);

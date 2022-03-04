@@ -1,12 +1,11 @@
-import { SingleProductContext } from "../context/SingleProductContext";
-import { useContext } from "react";
+import { useSingleProductContext } from "../context/SingleProductContext";
 import Error from "../components/Error";
 import SingleProduct from "../components/SingleProduct/SingleProduct";
 import AddToCart from "../components/SingleProduct/AddToCart";
 import { useStateValue } from "../context/StateContext";
 import "./sass/singleProduct.scss";
 const SingleProductController = () => {
-  const { document, loading, error } = useContext(SingleProductContext);
+  const { document, loading, error } = useSingleProductContext();
   const [{ basket }, dispatch] = useStateValue();
   if (loading) {
     return null;

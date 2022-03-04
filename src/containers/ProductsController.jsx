@@ -1,10 +1,9 @@
 import ProductsList from "../components/Products/ProductsList";
-import { useContext } from "react";
-import { SearchProductsContext } from "../context/SearchProductsContext";
+import { useSearchProductsContext } from "../context/SearchProductsContext";
 import Error from "../components/Error";
 const ProductsController = () => {
   const { matchedProducts, activeSearch, collectionDocs, loading, error } =
-    useContext(SearchProductsContext);
+    useSearchProductsContext();
 
   if (loading) {
     return null;

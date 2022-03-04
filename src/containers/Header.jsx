@@ -1,10 +1,8 @@
-import React from "react";
 import "./sass/Header/Header.scss";
 import Logo from "../components/Header/Logo";
 import Searchbox from "../components/Header/Searchbox";
 import Links from "../components/Header/Links";
-import { useContext } from "react";
-import { SearchProductsContext } from "../context/SearchProductsContext";
+import { useSearchProductsContext } from "../context/SearchProductsContext";
 const Header = () => {
   const {
     searchValue,
@@ -12,7 +10,7 @@ const Header = () => {
     handleSearchEvent,
     handleKeyPress,
     emptySearchStates,
-  } = useContext(SearchProductsContext);
+  } = useSearchProductsContext();
   return (
     <div className="header">
       <nav className="header__container">
