@@ -1,7 +1,6 @@
 @import "../../containers/sass/mixins.scss";
 .error {
     @include alignITemsCenter(column);
-    // flex-direction: column;
     padding: 5%;
     .error__imageText {
         width: 80%;

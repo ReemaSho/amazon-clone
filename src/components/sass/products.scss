@@ -20,6 +20,9 @@
             mix-blend-mode: multiply;
             overflow: hidden;
             object-fit: contain;
+            &:hover {
+                cursor: pointer;
+            }
         }
     }
 }
@@ -29,41 +32,40 @@
         padding: 0% 5% 0% 5%;
         width: 60%;
         color: $cardFontColor;
-        font-size: 16px;
-        line-height: 20px;
-        font-weight: lighter;
-    }
-    .product__title {
-        color: $cardFontColor;
-        text-decoration: none;
-        &:hover {
+        @include fontStyle(16px, 20px, lighter);
+        .product__title {
+            color: $cardFontColor;
+            text-decoration: none;
+            &:hover {
+                color: $darkOrange;
+                cursor: pointer;
+            }
+        }
+        .product__rating {
             color: $darkOrange;
         }
-    }
-    .product__rating {
-        color: $darkOrange;
-    }
-    .product__price {
-        color: $cardFontColor;
-        text-decoration: none;
-        font-weight: 100;
-        font-size: 18px;
-    }
-    .product__extraDetails {
-        p {
-            margin: 0;
+        .product__price {
+            color: $cardFontColor;
+            text-decoration: none;
+            @include fontStyle(18px, 20px, 100);
+            &:hover {
+                cursor: pointer;
+            }
         }
-        font-size: smaller;
-        font-weight: 100;
-        color: $medGray;
+        .product__extraDetails {
+            p {
+                margin: 0;
+            }
+            @include fontStyle(smaller, 20px, 100);
+            color: $medGray;
+        }
     }
 }
 
 @media screen and (max-width: 900px) {
     .product {
         .product__details {
-            font-size: 14px;
-            line-height: 18px;
+            @include fontStyle(14px, 18px, lighter);
         }
     }
 }
@@ -71,8 +73,7 @@
 @media screen and (max-width: 720px) {
     .product {
         .product__details {
-            font-size: 10px;
-            line-height: 12px;
+            @include fontStyle(10px, 12px, lighter);
         }
     }
 }
