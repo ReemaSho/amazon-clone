@@ -1,6 +1,6 @@
-const AddToCart = ({ price }) => {
+const AddToCart = ({ price, addToCard }) => {
   return (
-    <div className="SingleProduct__addToBasket">
+    <div className="SingleProduct__addToCart">
       <p className="price">{`$${price}`}</p>
       <p className="SingleProduct__extraDetails">
         $10.70 Shipping & Import Fees Deposit to Netherlands{" "}
@@ -12,7 +12,9 @@ const AddToCart = ({ price }) => {
           DHL, ECMS EXPRESS, Landmark Global, LaserShip
         </span>
       </p>
-      <button className="SingleProduct__addToBasketBtn">Add to Cart</button>
+      <button className="SingleProduct__addToCartBtn" onClick={addToCard}>
+        Add to Cart
+      </button>
     </div>
   );
 };
