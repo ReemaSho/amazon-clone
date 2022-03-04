@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import errorText from "../assets/errorText.png";
-import dog from "../assets/errorImage.jpg";
+import errorText from "../assets/errorPage-images/errorText.png";
+import dog from "../assets/errorPage-images/errorImage.jpg";
 import "./sass/error.scss";
 const Error = () => {
   return (
