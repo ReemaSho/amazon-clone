@@ -9,6 +9,7 @@
     margin: 5px auto;
     @include alignITemsCenter(row);
     border: 1px solid $productBorderColor;
+    @include boxShadowLightGray();
     .product__imageContainer {
         @include alignITemsCenter(row);
         justify-content: center;

@@ -1,12 +1,22 @@
 import { useSingleProductContext } from "../context/SingleProductContext";
+import useProductPriceAndRating from "../Hooks/useProductPriceAndRating";
 import Error from "../components/Error";
 import SingleProduct from "../components/SingleProduct/SingleProduct";
 import AddToCart from "../components/SingleProduct/AddToCart";
 import { useStateValue } from "../context/StateContext";
-import "./sass/singleProduct.scss";
+import "./sass/singleProduct/singleProduct.scss";
+import "./sass/singleProduct/priceAndRating.scss";
+
 const SingleProductController = () => {
   const { document, loading, error } = useSingleProductContext();
-  const [{ basket }, dispatch] = useStateValue();
+  const {
+    ratingAverage,
+    savingAmount,
+    regularPriceClasses,
+    discountedPriceClasses,
+    finalPrice,
+  } = useProductPriceAndRating(document);
+  const [, dispatch] = useStateValue();
   if (loading) {
     return null;
   }
@@ -22,24 +32,22 @@ const SingleProductController = () => {
       description,
     } = document;
     const addToCard = () => {
-      dispatch({ type: "ADD_TO_CART", item: { id: id } });
+      dispatch({
+        type: "ADD_TO_CART",
+        id: id,
+        item: {
+          id: id,
+          title: title,
+          rating: rating,
+          images: images,
+          offer: offer,
+          regularPrice: regularPrice,
+          discountedPrice: discountedPrice,
+          description: description,
+          quantity: 1,
+        },
+      });
     };
-    const ratingAverage = average(rating);
-    let savingAmount = "";
-    let regularPriceClasses = "singleProduct__regularPrice";
-    let discountedPriceClasses = "display_none";
-    let price = document.regularPrice;
-    if (offer) {
-      savingAmount = Math.floor(
-        document.regularPrice - document.discountedPrice
-      );
-      regularPriceClasses = " singleProduct__regularPrice discounted";
-      discountedPriceClasses = "singleProduct__discountedPrice";
-      price = document.discountedPrice;
-    }
-    function average(numbers) {
-      return Math.floor(numbers.reduce((a, b) => a + b) / numbers.length);
-    }
 
     return (
       <div className="SingleProduct__container">
@@ -54,7 +62,7 @@ const SingleProductController = () => {
           savingAmount={savingAmount}
           description={description}
         ></SingleProduct>
-        <AddToCart price={price} addToCard={addToCard}></AddToCart>
+        <AddToCart price={finalPrice} addToCard={addToCard}></AddToCart>
       </div>
     );
   }

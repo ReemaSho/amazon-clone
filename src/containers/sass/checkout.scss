@@ -1,0 +1,38 @@
+@import "../sass/colors.scss";
+@import "../sass/mixins.scss";
+.checkout {
+    color: $cardFontColor;
+}
+
+.checkout__ad {
+    width: 100%;
+    max-height: 300px;
+    margin-bottom: 10px;
+    object-fit: contain;
+}
+
+.checkout__items {
+    width: 70%;
+}
+
+.checkout__title {
+    color: $cardFontColor;
+    @include fontStyle(32px, 36px, 100);
+    margin: 10px;
+    padding: 10px;
+    border-bottom: 1px solid $productBorderColor;
+}
+
+.checkout__paragraph {
+    @include fontStyle(22px, 36px, 200);
+    margin-left: 20px;
+}
+
+@media screen and (max-width: 600px) {
+    .checkout__title {
+        @include fontStyle(20px, 26px, 100);
+    }
+    .checkout__paragraph {
+        @include fontStyle(16px, 36px, 200);
+    }
+}

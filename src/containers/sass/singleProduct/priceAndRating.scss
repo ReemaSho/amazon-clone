@@ -1,0 +1,20 @@
+@import "../colors.scss";
+.product__regularPrice,
+.product__discountedPrice {
+    font-size: 16px;
+    color: $priceColor;
+    margin: 1%;
+    span {
+        color: $torquayColor;
+    }
+}
+
+.discounted {
+    color: $torquayColor;
+    font-size: 14px;
+    text-decoration: line-through;
+}
+
+.display_none {
+    display: none;
+}

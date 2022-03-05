@@ -1,5 +1,5 @@
-@import "./colors.scss";
-@import "./mixins.scss";
+@import "../colors.scss";
+@import "../mixins.scss";
 .SingleProduct__container {
     display: flex;
     padding: 5% 3% 3% 3%;
@@ -16,6 +16,7 @@
         height: fit-content;
         border: 1px solid $productBorderColor;
         border-radius: 8px;
+        @include boxShadowLightGray();
     }
 }
 
@@ -44,23 +45,6 @@
     .singleProduct__rating {
         padding-top: 1%;
         color: $darkOrange;
-    }
-    .singleProduct__regularPrice,
-    .singleProduct__discountedPrice {
-        font-size: 16px;
-        color: $priceColor;
-        margin: 1%;
-        span {
-            color: $torquayColor;
-        }
-    }
-    .discounted {
-        color: $torquayColor;
-        font-size: 14px;
-        text-decoration: line-through;
-    }
-    .display_none {
-        display: none;
     }
     .singleProduct__details {
         .singleProduct__description {
@@ -91,6 +75,7 @@
         }
     }
     .SingleProduct__addToCartBtn {
+        @include boxShadowLightGray();
         width: 80%;
         margin: 10%;
         font-size: 16px;

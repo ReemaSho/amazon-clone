@@ -1,0 +1,111 @@
+@import "../../containers/sass/colors.scss";
+@import "../../containers/sass/mixins.scss";
+.checkoutProduct {
+    @include alignITemsCenter(row);
+    width: 100%;
+    padding: 3%;
+    color: $cardFontColor;
+    .checkoutProduct__image {
+        object-fit: contain;
+        width: 20%;
+        height: 20%;
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    .checkoutProduct__info {
+        padding-left: 20px;
+    }
+}
+
+.checkoutProduct__info {
+    .checkoutProduct__title,
+    .checkoutProduct__price,
+    .checkoutProduct__rating {
+        margin: 1%;
+    }
+    .checkoutProduct__title {
+        font-size: 17px;
+        font-weight: 200;
+        &:hover {
+            color: $darkOrange;
+            cursor: pointer;
+        }
+    }
+    .checkoutProduct__rating {
+        padding-top: 1%;
+        color: $darkOrange;
+    }
+    .checkoutProduct__price {
+        font-size: 18px;
+    }
+}
+
+.checkoutProduct__info {
+    .checkoutProduct__quantity {
+        margin: 1%;
+        @include alignITemsCenter(row);
+        justify-content: flex-start;
+        color: $torquayColor;
+        font-size: 20px;
+        small {
+            font-size: 16px;
+        }
+        span {
+            color: $cardFontColor;
+        }
+        .checkoutProduct__quantityControllers {
+            font-weight: 800;
+            font-size: inherit;
+            margin: 10px;
+            &:hover {
+                cursor: pointer;
+                color: $darkOrange;
+            }
+        }
+    }
+    button {
+        margin-top: 2%;
+        color: $torquayColor;
+        font-size: 14px;
+        padding: 1%;
+        border: 1px solid $productBorderColor;
+        background-color: transparent;
+        border-radius: 5px;
+        justify-self: center;
+        @include boxShadowLightGray();
+        &:hover {
+            cursor: pointer;
+            border-color: $darkOrange;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .checkoutProduct__info {
+        .checkoutProduct__title {
+            font-size: 14px;
+        }
+        button {
+            padding: 0.5%;
+            font-size: 12px;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .checkoutProduct__info {
+        .checkoutProduct__title {
+            font-size: 12px;
+        }
+        .checkoutProduct__quantity {
+            font-size: 16px;
+        }
+        .checkoutProduct__price {
+            font-size: 16px;
+        }
+        button {
+            font-size: 10px;
+        }
+    }
+}

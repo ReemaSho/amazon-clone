@@ -1,7 +1,12 @@
-import React from "react";
-
+import Header from "../containers/Header";
+import CheckoutController from "../containers/CheckoutController";
 const Checkout = () => {
-  return <div>Checkout</div>;
+  return (
+    <div>
+      <Header />
+      <CheckoutController />
+    </div>
+  );
 };
 
 export default Checkout;
