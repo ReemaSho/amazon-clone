@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { useStateValue } from "../context/StateContext";
 import CheckoutProduct from "../components/CheckoutProduct/CheckoutProduct";
 import Subtotal from "../components/CheckoutProduct/Subtotal";
@@ -8,9 +9,10 @@ import "./sass/checkout.scss";
 
 const CheckoutController = () => {
   const [{ Cart }] = useStateValue();
-  const adImages = [image2, image3, image4];
-  const imageSource = adImages[Math.floor(Math.random() * adImages.length)];
-
+  const imageSource = useMemo(() => {
+    const adImages = [image2, image3, image4];
+    return adImages[Math.floor(Math.random() * adImages.length)];
+  }, []);
   if (Cart.length === 0) {
     return (
       <div className="checkout">
