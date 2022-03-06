@@ -1,6 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import StarIcon from "@mui/icons-material/Star";
 import WhatshotSharpIcon from "@mui/icons-material/WhatshotSharp";
+import "../sass/products/product.scss";
 const Product = ({ id, title, offer, price, images, rating }) => {
   const navigate = useNavigate();
   const toSingleProductPage = () => {

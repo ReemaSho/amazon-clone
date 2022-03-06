@@ -1,4 +1,4 @@
-import ProductsList from "../components/Products/ProductsList";
+import Products from "../components/products/Products";
 import { useSearchProductsContext } from "../context/SearchProductsContext";
 import Error from "../components/Error";
 const ProductsController = () => {
@@ -12,9 +12,9 @@ const ProductsController = () => {
     return <Error />;
   }
   if (matchedProducts.length && activeSearch) {
-    return <ProductsList productsList={matchedProducts} />;
+    return <Products productsList={matchedProducts} />;
   }
-  return <ProductsList productsList={collectionDocs} />;
+  return <Products productsList={collectionDocs} />;
 };
 
 export default ProductsController;

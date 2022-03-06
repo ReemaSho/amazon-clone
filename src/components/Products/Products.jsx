@@ -1,6 +1,6 @@
 import Product from "./Product";
-import "../sass/products.scss";
-const ProductsList = ({ productsList }) => {
+import "../sass/products/products.scss";
+const Products = ({ productsList }) => {
   const average = (numbers) => {
     return Math.floor(numbers.reduce((a, b) => a + b) / numbers.length);
   };
@@ -25,4 +25,4 @@ const ProductsList = ({ productsList }) => {
   return <div className="products">{product}</div>;
 };
 
-export default ProductsList;
+export default Products;

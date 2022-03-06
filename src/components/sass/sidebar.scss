@@ -1,0 +1,42 @@
+@import "../../containers/sass/colors.scss";
+.sideBar {
+    height: 60vh;
+    display: flex;
+    width: 15%;
+    flex-direction: column;
+    background-color: $lightGray;
+    border: 2px solid $productBorderColor;
+    justify-content: space-between;
+    padding: 3% 0 1% 0;
+    margin-top: 10px;
+}
+
+.sideBar__links {
+    color: $medGray;
+    padding-bottom: 10%;
+    border-bottom: 2px solid $productBorderColor;
+    h4 {
+        width: 95%;
+        margin-left: 5%;
+    }
+    &:hover {
+        color: $darkOrange;
+        cursor: pointer;
+    }
+    &:last-of-type {
+        border: none;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .sideBar {
+        top: -100px;
+        height: 40vh;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .sideBar {
+        display: none;
+    }
+}

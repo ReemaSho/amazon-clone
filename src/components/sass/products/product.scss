@@ -1,22 +1,21 @@
-@import "../../containers/sass/colors.scss";
-@import "../../containers/sass/mixins.scss";
-.products {
-    @include alignITemsCenter(column);
-}
-
+@import "../../../containers/sass/colors.scss";
+@import "../../../containers/sass/mixins.scss";
 .product {
-    width: 70%;
-    margin: 5px auto;
+    width: 45%;
+    height: 12%;
+    margin: 5px 0px;
     @include alignITemsCenter(row);
     border: 1px solid $productBorderColor;
     @include boxShadowLightGray();
     .product__imageContainer {
         @include alignITemsCenter(row);
         justify-content: center;
-        background-color: $lightGray;
+        background-color: $white;
+        height: 100%;
         width: 40%;
-        padding: 5%;
+        padding: 2%;
         .product__image {
+            height: 80%;
             width: 100%;
             mix-blend-mode: multiply;
             overflow: hidden;
@@ -82,6 +81,7 @@
 
 @media screen and (max-width: 720px) {
     .product {
+        width: 100%;
         .product__details {
             @include fontStyle(10px, 12px, lighter);
         }

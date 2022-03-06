@@ -20,7 +20,7 @@ const CarouselSlider = () => {
       swipeable={true}
       dynamicHeight={true}
     >
-      <div>
+      <div className="CarouselSlider">
         <img className="carouselImage" src={image1} alt="" />
       </div>
       <div>

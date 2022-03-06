@@ -4,8 +4,8 @@ import Error from "../components/Error";
 import SingleProduct from "../components/SingleProduct/SingleProduct";
 import AddToCart from "../components/SingleProduct/AddToCart";
 import { useStateValue } from "../context/StateContext";
-import "./sass/singleProduct/singleProduct.scss";
-import "./sass/singleProduct/priceAndRating.scss";
+//import "./sass/singleProduct/singleProduct.scss";
+//import "./sass/singleProduct/priceAndRating.scss";
 
 const SingleProductController = () => {
   const { document, loading, error } = useSingleProductContext();

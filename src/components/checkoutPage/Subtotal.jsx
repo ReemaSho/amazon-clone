@@ -2,7 +2,7 @@ import React from "react";
 import { useStateValue } from "../../context/StateContext";
 import CurrencyFormat from "react-currency-format";
 import { getCartTotal } from "../../context/reducer";
-import "../sass/subtotal.scss";
+import "../sass/checkoutPage/subtotal.scss";
 const Subtotal = () => {
   const [{ ItemsCount, Cart }] = useStateValue();
   return (
