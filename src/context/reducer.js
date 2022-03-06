@@ -1,3 +1,15 @@
+export const getCartTotal = (cart) => {
+    if (cart.length) {
+        const amounts = [];
+        cart.forEach((item) => {
+            amounts.push(item.finalPrice * item.quantity);
+        });
+        const total = amounts.reduce((amount, item) => item + amount, 0);
+        return total;
+    } else {
+        return 0;
+    }
+};
 export const initialState = {
     Cart: [],
     ItemsCount: 0,

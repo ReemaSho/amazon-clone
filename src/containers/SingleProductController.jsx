@@ -41,6 +41,7 @@ const SingleProductController = () => {
           rating: rating,
           images: images,
           offer: offer,
+          finalPrice: finalPrice,
           regularPrice: regularPrice,
           discountedPrice: discountedPrice,
           description: description,

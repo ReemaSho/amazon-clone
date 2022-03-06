@@ -1,10 +1,14 @@
 @import "../../containers/sass/colors.scss";
 @import "../../containers/sass/mixins.scss";
 .checkoutProduct {
+    background-color: $checkoutProductBgColor;
     @include alignITemsCenter(row);
     width: 100%;
     padding: 3%;
     color: $cardFontColor;
+    margin-left: 10px;
+    margin-bottom: 5px;
+    height: fit-content;
     .checkoutProduct__image {
         object-fit: contain;
         width: 20%;

@@ -1,14 +1,53 @@
 @import "../sass/colors.scss";
 @import "../sass/mixins.scss";
+body {
+    background-color: $checkoutPageBackgroundColor;
+}
+
 .checkout {
+    padding: 2%;
     color: $cardFontColor;
+    height: 100%;
+}
+
+.checkout__header {
+    display: flex;
 }
 
 .checkout__ad {
-    width: 100%;
+    width: 80%;
     max-height: 300px;
+    margin-left: 0;
     margin-bottom: 10px;
     object-fit: contain;
+}
+
+.checkout__emptyBox {
+    background-color: #fff;
+    padding-bottom: 50px;
+    width: 80%;
+    margin: 10px;
+    position: relative;
+    .checkout__priceZero {
+        @include fontStyle(20px, 30px, 100);
+        position: absolute;
+        right: 15px;
+    }
+    .checkout__title {
+        display: flex;
+        position: relative;
+        align-items: center;
+        small {
+            @extend .checkout__priceZero;
+            @include fontStyle(16px, 20px, 100);
+            color: $medGray;
+        }
+    }
+}
+
+.checkout__info {
+    margin: 10px;
+    @include fontStyle(13px, 20px, 100);
 }
 
 .checkout__items {
@@ -19,16 +58,20 @@
     color: $cardFontColor;
     @include fontStyle(32px, 36px, 100);
     margin: 10px;
+    margin-bottom: 3%;
     padding: 10px;
     border-bottom: 1px solid $productBorderColor;
 }
 
 .checkout__paragraph {
-    @include fontStyle(22px, 36px, 200);
-    margin-left: 20px;
+    @extend .checkout__title;
+    @include fontStyle(18px, 36px, 200);
 }
 
 @media screen and (max-width: 600px) {
+    .checkout__ad {
+        display: none;
+    }
     .checkout__title {
         @include fontStyle(20px, 26px, 100);
     }
