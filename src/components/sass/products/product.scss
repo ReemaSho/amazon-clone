@@ -2,7 +2,7 @@
 @import "../../../containers/sass/mixins.scss";
 .product {
     width: 45%;
-    height: 12%;
+    height: 350px;
     margin: 5px 0px;
     @include alignITemsCenter(row);
     border: 1px solid $productBorderColor;
@@ -32,7 +32,7 @@
         padding: 0% 5% 0% 5%;
         width: 60%;
         color: $cardFontColor;
-        @include fontStyle(16px, 20px, lighter);
+        @include fontStyle(15px, 20px, lighter);
         .product__title {
             color: $cardFontColor;
             text-decoration: none;
@@ -74,7 +74,7 @@
 @media screen and (max-width: 900px) {
     .product {
         .product__details {
-            @include fontStyle(14px, 18px, lighter);
+            @include fontStyle(12px, 18px, lighter);
         }
     }
 }

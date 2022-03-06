@@ -1,21 +1,11 @@
 @import "../../../containers/sass/colors.scss";
 @import "../../../containers/sass/mixins.scss";
-.cards {
-    width: 80%;
-    margin-right: 2.5%;
-    justify-content: space-between;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 1% 2%;
-}
-
 .card {
     color: $cardFontColor;
     width: 48%;
-    height: 50vh;
-    background-color: $white;
+    height: 60vh;
+    background-color: #fff;
     margin-bottom: 20px;
-    padding: 1%;
     border: 1px solid $productBorderColor;
     @include boxShadowLightGray();
     h2 {
@@ -33,10 +23,6 @@
 }
 
 @media screen and (max-width: 720px) {
-    .cards {
-        width: 95%;
-        margin: auto;
-    }
     .card {
         width: 95%;
         margin: auto;
