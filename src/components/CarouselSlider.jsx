@@ -14,7 +14,7 @@ const CarouselSlider = () => {
       showIndicators={false}
       showThumbs={false}
       autoPlay={true}
-      showArrows={true}
+      showArrows={false}
       showStatus={false}
       infiniteLoop={true}
       swipeable={true}

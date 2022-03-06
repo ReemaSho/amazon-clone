@@ -4,23 +4,23 @@ import "./sass/sidebar.scss";
 
 const Sidebar = () => {
   const navigate = useNavigate();
-  const toSingleProductsPage = () => {
+  const toProductsPage = () => {
     navigate(`/products`);
   };
 
   return (
     <div className="sideBar">
-      <div className="sideBar__links" onClick={toSingleProductsPage}>
-        <h4>Bestseller</h4>
+      <div className="sideBar__links" onClick={toProductsPage}>
+        <h4>All Products</h4>
       </div>
-      <div className="sideBar__links" onClick={toSingleProductsPage}>
-        <h4>Categories</h4>
+      <div className="sideBar__links" onClick={toProductsPage}>
+        <h4>Popular products</h4>
       </div>
-      <div className="sideBar__links" onClick={toSingleProductsPage}>
-        <h4>newAdded</h4>
+      <div className="sideBar__links" onClick={toProductsPage}>
+        <h4>New arrivals </h4>
       </div>
-      <div className="sideBar__links" onClick={toSingleProductsPage}>
-        <h4>Offers</h4>
+      <div className="sideBar__links" onClick={toProductsPage}>
+        <h4>Deals</h4>
       </div>
     </div>
   );

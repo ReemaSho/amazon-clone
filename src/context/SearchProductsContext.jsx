@@ -9,6 +9,9 @@ export const SearchProductsProvider = ({ children }) => {
   const [matchedProducts, setMatchesProducts] = useState([]);
   const [activeSearch, setActiveSearch] = useState(false);
   const navigate = useNavigate();
+  const toProductsPage = () => {
+    navigate(`/products`);
+  };
   const getSearchValue = (e) => {
     setSearchValue("");
     if (e.target.value) {
@@ -18,9 +21,6 @@ export const SearchProductsProvider = ({ children }) => {
     }
   };
   const handleKeyPress = (e) => {
-    const toProductsPage = () => {
-      navigate(`/products`);
-    };
     if (e.key === "Enter") {
       setActiveSearch(true);
       getMatchedProducts(searchValue);

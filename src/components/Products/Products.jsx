@@ -1,10 +1,10 @@
 import Product from "./Product";
 import "../sass/products/products.scss";
-const Products = ({ productsList }) => {
+const Products = ({ products }) => {
   const average = (numbers) => {
     return Math.floor(numbers.reduce((a, b) => a + b) / numbers.length);
   };
-  const product = productsList.map((product) => {
+  const product = products.map((product) => {
     const { id, title, offer, regularPrice, discountedPrice, images, rating } =
       product;
     const ratingAverage = average(rating);
