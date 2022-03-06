@@ -1,6 +1,8 @@
 import Header from "../containers/Header";
 import Sidebar from "../components/Sidebar";
 import CarouselSlider from "../components/CarouselSlider";
+import Cards from "../components/Home/Cards";
+import "./sass/homePage.scss";
 
 const Home = () => {
   return (
@@ -8,7 +10,10 @@ const Home = () => {
       <Header />
 
       <CarouselSlider />
-      <Sidebar />
+      <div className="homePage">
+        <Sidebar />
+        <Cards />
+      </div>
     </>
   );
 };

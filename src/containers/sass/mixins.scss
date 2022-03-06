@@ -1,3 +1,4 @@
+@import "./colors.scss";
 @mixin alignITemsCenter($direction) {
     display: flex;
     align-items: center;
@@ -11,5 +12,5 @@
 }
 
 @mixin boxShadowLightGray {
-    box-shadow: 0 2px 5px 0 rgb(213 217 217 / 50%);
+    box-shadow: 0 2px 5px 0 $boxShadowColor;
 }
