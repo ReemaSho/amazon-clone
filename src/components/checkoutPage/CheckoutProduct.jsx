@@ -60,14 +60,15 @@ const CheckoutProduct = ({
         </div>
         <div className="checkoutProduct__quantity">
           <small>Qty:</small>
-          <AddIcon
-            className="checkoutProduct__quantityControllers"
-            onClick={incrementQuantity}
-          />
-          <span>{quantity}</span>
           <RemoveIcon
             className="checkoutProduct__quantityControllers"
             onClick={decrementQuantity}
+          />
+
+          <span>{quantity}</span>
+          <AddIcon
+            className="checkoutProduct__quantityControllers"
+            onClick={incrementQuantity}
           />
         </div>
         <p className="checkoutProduct__price">

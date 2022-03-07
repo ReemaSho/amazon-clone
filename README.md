@@ -14,33 +14,34 @@ Please Have a look at the link below to see the website's layout for desktop.
 
 ### Must have
 
-- [ ] Home page route.
+- [x] Home page route.
 
-  - [ ] Page displays products.
-  - [ ] Page displays user name if he is signed in.
-  - [ ] User can search products.
-  - [ ] User can add products to the basket.
-  - [ ] Page keeps track number of products in the basket.
+  - [x] Page displays Categories.
+  - [x] Page displays user name if he is signed in.
+  - [x] User can search products.
+  <!-- - [x ] User can add products to the basket. -->
+  - [x] Page keeps track number of products in the basket.
 
-- [ ] Signing page route.
+- [x] Signing page route.
 
-  - [ ] User can sign in if he/she already has an account.
-  - [ ] If User tries to sign in with incorrect credentials, an alert message pops up.
-  - [ ] User can register.
+  - [x] User can sign in if he/she already has an account.
+  - [x] If User tries to sign in with incorrect credentials, an alert message pops up.
+  - [x] User can register.
 
-- [ ] Checkout page route.
-  - [ ] User can add products to the basket even if he/she is not signed in.
-  - [ ] User can remove products from the basket.
-  - [ ] Page has subtotal component.
-- [ ] App layout is responsive for mobile and tablet.
+- [x] Checkout page route.
+  - [x] User can add products to the basket even if he/she is not signed in.
+  - [x] User can remove products from the basket.
+  - [x] Page has subtotal component.
+- [x] App layout is responsive for mobile and tablet.
+- [x] Single product page.
 
 ### Nice to have
 
-- [ ] Home page has a responsive header carousel component.
-- [ ] User can filter products based on Categories.
-- [ ] Single product page.
+- [x] Home page has a carousel component.
+- [x] Bestsellers route based on rating.
+- [x] New arrivals route.
+- [x] Deals arrivals route.
 - [ ] User can review a product.
-- [ ] Bestsellers route based on rating.
 
 ## Setup
 
