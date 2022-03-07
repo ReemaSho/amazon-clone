@@ -3,7 +3,7 @@ import useCollectionData from "../Hooks/useCollectionData";
 import Products from "../components/products/Products";
 import Sidebar from "../components/Sidebar";
 import Error from "../components/Error";
-import "./sass/productsController.scss";
+import "./sass/products.scss";
 const DealsController = () => {
   const { collectionDocs, loading, error } = useCollectionData("products");
   const [dealsProducts, setDealsProducts] = useState([]);

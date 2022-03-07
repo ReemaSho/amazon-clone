@@ -5,7 +5,7 @@ import Subtotal from "../components/checkoutPage/Subtotal";
 import image2 from "../assets/ad-images/image2.jpg";
 import image3 from "../assets/ad-images/image3.jpg";
 import image4 from "../assets/ad-images/image4.jpg";
-import "./sass/checkoutController.scss";
+import "./checkoutController.scss";
 
 const CheckoutController = () => {
   const [{ Cart }] = useStateValue();

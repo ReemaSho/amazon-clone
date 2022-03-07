@@ -2,7 +2,7 @@ import Products from "../components/products/Products";
 import Sidebar from "../components/Sidebar";
 import { useSearchProductsContext } from "../context/SearchProductsContext";
 import Error from "../components/Error";
-import "./sass/productsController.scss";
+import "./sass/products.scss";
 const ProductsController = () => {
   const { matchedProducts, activeSearch, collectionDocs, loading, error } =
     useSearchProductsContext();
