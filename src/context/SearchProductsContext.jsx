@@ -20,17 +20,17 @@ export const SearchProductsProvider = ({ children }) => {
       setActiveSearch(false);
     }
   };
-  const handleKeyPress = (e) => {
-    if (e.key === "Enter") {
-      setActiveSearch(true);
-      getMatchedProducts(searchValue);
-      toProductsPage();
-    }
-  };
   const handleSearchEvent = () => {
     setActiveSearch(true);
     getMatchedProducts(searchValue);
   };
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSearchEvent();
+      toProductsPage();
+    }
+  };
+
   const emptySearchStates = () => {
     setActiveSearch(false);
     setSearchValue("");

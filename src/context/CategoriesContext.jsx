@@ -1,35 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { createContext, useState, useContext } from "react";
 import useCollectionData from "../Hooks/useCollectionData";
-import { useNavigate } from "react-router-dom";
 const CategoriesContext = createContext();
 export const CategoriesProvider = ({ children }) => {
-  const { collectionDocs } = useCollectionData("products");
+  const { collectionDocs, error, loading } = useCollectionData("products");
   const [categoryProducts, setCategoryProducts] = useState([]);
-  const navigate = useNavigate();
-  const toProductsPage = () => {
-    navigate(`/products`);
-  };
-
-  const getCategoryProducts = (value) => {
-    if (value) {
+  const [category, setCategory] = useState(null);
+  useEffect(() => {
+    if (category && !error) {
       const result = collectionDocs.filter(
-        (doc) => doc.category === value.toLowerCase()
+        (doc) => doc.category === category.toLowerCase()
       );
       setCategoryProducts(result);
-    }
-  };
-  const getCategoryName = (value) => {
-    toProductsPage();
-    getCategoryProducts(value).then((_) => {
+    } else {
       setCategoryProducts([]);
-    });
-  };
+    }
+  }, [category, collectionDocs, error]);
   return (
     <CategoriesContext.Provider
       value={{
         categoryProducts,
-        getCategoryName,
+        setCategory,
+        error,
+        loading,
       }}
     >
       {children}

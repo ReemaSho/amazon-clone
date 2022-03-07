@@ -1,13 +1,16 @@
 import React from "react";
 import "../sass/Home/cards.scss";
-import { useCategoriesContext } from "../../context/CategoriesContext";
+import { useNavigate } from "react-router-dom";
 const Cards = () => {
-  const { getCategoryName } = useCategoriesContext();
+  const Navigate = useNavigate();
+  const navigateToCategoryPage = (category) => {
+    Navigate(`products/category/${category}`);
+  };
   return (
     <div className="cards">
       <div
         className="card"
-        onClick={() => getCategoryName("Beauty & Personal Care")}
+        onClick={() => navigateToCategoryPage("beauty & personal care")}
       >
         <h2 className="mainSection__title">Beauty & Personal Care</h2>
         <img
@@ -15,21 +18,27 @@ const Cards = () => {
           alt=""
         />
       </div>
-      <div className="card" onClick={() => getCategoryName("Baby")}>
+      <div className="card" onClick={() => navigateToCategoryPage("baby")}>
         <h2 className="mainSection__title">Baby</h2>
         <img
           src="https://m.media-amazon.com/images/I/81MKujcFjfL._UX569_.jpg"
           alt=""
         />
       </div>
-      <div className="card" onClick={() => getCategoryName("Art & Crafts")}>
+      <div
+        className="card"
+        onClick={() => navigateToCategoryPage("art & crafts")}
+      >
         <h2 className="mainSection__title">Art & Crafts</h2>
         <img
           src="https://images-na.ssl-images-amazon.com/images/I/51CVfURDXlL.jpg"
           alt=""
         />
       </div>
-      <div className="card" onClick={() => getCategoryName("Automotive")}>
+      <div
+        className="card"
+        onClick={() => navigateToCategoryPage("automotive")}
+      >
         <h2 className="mainSection__title">Automotive</h2>
         <img
           src="https://images-na.ssl-images-amazon.com/images/I/71CuA5o9ziL._AC._SR360,460.jpg"
