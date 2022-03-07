@@ -3,7 +3,7 @@ import useProductsTimeStamp from "../Hooks/useProductsTimeStamp";
 import Error from "../components/Error";
 import Sidebar from "../components/Sidebar";
 import Loading from "../components/Loading";
-import Products from "../components/products/Products";
+import Products from "../components/Products/Products";
 const NewArrivalsController = () => {
   const { collectionDocs, loading, error } = useProductsTimeStamp("products");
   if (loading) {

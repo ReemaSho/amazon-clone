@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import useCollectionData from "../Hooks/useCollectionData";
-import Products from "../components/products/Products";
+import Products from "../components/Products/Product";
 import Sidebar from "../components/Sidebar";
 import Loading from "../components/Loading";
 import Error from "../components/Error";
