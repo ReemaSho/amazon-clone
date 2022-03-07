@@ -2,8 +2,7 @@ import React from "react";
 import { Carousel } from "react-responsive-carousel";
 import StarIcon from "@mui/icons-material/Star";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
-import "../sass/singleProduct/singleProduct.scss";
-import "../sass/singleProduct/priceAndRating.scss";
+import "./singleProduct.scss";
 const SingleProduct = ({
   imgUrls,
   title,

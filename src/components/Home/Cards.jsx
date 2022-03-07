@@ -1,5 +1,5 @@
 import React from "react";
-import "../sass/Home/cards.scss";
+import "./cards.scss";
 import { useNavigate } from "react-router-dom";
 const Cards = () => {
   const Navigate = useNavigate();

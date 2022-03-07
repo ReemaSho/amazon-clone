@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import errorText from "../assets/errorPage-images/errorText.png";
 import dog from "../assets/errorPage-images/errorImage.jpg";
-import "./sass/error.scss";
+import "./error.scss";
 import { useSearchProductsContext } from "../context/SearchProductsContext";
 const Error = () => {
   const { emptySearchStates } = useSearchProductsContext();

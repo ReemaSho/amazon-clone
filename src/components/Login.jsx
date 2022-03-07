@@ -2,7 +2,7 @@ import { useState } from "react";
 import { auth } from "../Firebase.auth";
 import { Link, useNavigate } from "react-router-dom";
 import logo from "../assets/logoBlack.png";
-import "./sass/login.scss";
+import "./login.scss";
 const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");

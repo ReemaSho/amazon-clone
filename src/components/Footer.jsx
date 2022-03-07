@@ -1,5 +1,5 @@
 import React from "react";
-import "./sass/footer.scss";
+import "./footer.scss";
 import logo from "../assets/amazon-logo.png";
 const Footer = () => {
   return (

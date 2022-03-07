@@ -1,5 +1,5 @@
 import Product from "./Product";
-import "../sass/products/products.scss";
+import "./products.scss";
 const Products = ({ products }) => {
   const average = (numbers) => {
     return Math.floor(numbers.reduce((a, b) => a + b) / numbers.length);

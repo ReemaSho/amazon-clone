@@ -6,7 +6,7 @@ import image2 from "../assets/CarouselSlider-images/carouselImage2.jpg";
 import image3 from "../assets/CarouselSlider-images/carouselImage3.jpg";
 import image4 from "../assets/CarouselSlider-images/carouselImage4.jpg";
 
-import "./sass/carouselSlider.scss";
+import "./carouselSlider.scss";
 
 const CarouselSlider = () => {
   return (

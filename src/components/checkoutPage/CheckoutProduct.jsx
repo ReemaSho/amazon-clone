@@ -5,7 +5,7 @@ import useProductPriceAndRating from "../../Hooks/useProductPriceAndRating";
 import StarIcon from "@mui/icons-material/Star";
 import AddIcon from "@mui/icons-material/Add";
 import RemoveIcon from "@mui/icons-material/Remove";
-import "../sass/checkoutPage/checkoutProduct.scss";
+import "./checkoutProduct.scss";
 
 const CheckoutProduct = ({
   id,

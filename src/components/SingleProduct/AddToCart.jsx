@@ -1,5 +1,4 @@
-import "../sass/singleProduct/singleProduct.scss";
-import "../sass/singleProduct/priceAndRating.scss";
+import "./addToCart.scss";
 const AddToCart = ({ price, addToCard }) => {
   return (
     <div className="SingleProduct__addToCart">
