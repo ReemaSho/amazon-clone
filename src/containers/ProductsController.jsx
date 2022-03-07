@@ -1,4 +1,4 @@
-import Products from "../components/products/Products";
+import Products from "../components/Products/Products";
 import Sidebar from "../components/Sidebar";
 import { useSearchProductsContext } from "../context/SearchProductsContext";
 import Error from "../components/Error";
