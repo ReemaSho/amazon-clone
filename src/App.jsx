@@ -33,7 +33,6 @@ function App() {
       unsubscribe();
     };
   }, [dispatch]);
-  console.log(user);
   return (
     <Router>
       <SingleProductProvider>
