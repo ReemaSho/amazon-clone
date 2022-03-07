@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import Category from "./pages/Category";
+import Deals from "./pages/Deals";
 import SingleProduct from "./pages/SingleProduct";
 import Login from "./pages/Login";
 import Checkout from "./pages/Checkout";
@@ -25,6 +26,7 @@ function App() {
                 path="/products/category/:category"
                 element={<Category />}
               ></Route>
+              <Route path="/products/deals" element={<Deals />}></Route>
               <Route path="/products/:id" element={<SingleProduct />}></Route>
             </Routes>
           </CategoriesProvider>

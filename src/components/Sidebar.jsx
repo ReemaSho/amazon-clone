@@ -1,28 +1,43 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import "./sass/sidebar.scss";
 
 const Sidebar = () => {
-  const navigate = useNavigate();
-  const toProductsPage = () => {
-    navigate(`/products`);
-  };
-
   return (
-    <div className="sideBar">
-      <div className="sideBar__links" onClick={toProductsPage}>
+    <ul className="sideBar">
+      <NavLink className="sideBar__links" activeClassName="active" to="/">
+        <h4>Home</h4>
+      </NavLink>
+      <NavLink
+        className="sideBar__links"
+        activeClassName="active"
+        to="/products"
+      >
         <h4>All Products</h4>
-      </div>
-      <div className="sideBar__links" onClick={toProductsPage}>
+      </NavLink>
+      <NavLink
+        className="sideBar__links"
+        activeClassName="active"
+        to="/products/deals"
+      >
         <h4>Popular products</h4>
-      </div>
-      <div className="sideBar__links" onClick={toProductsPage}>
-        <h4>New arrivals </h4>
-      </div>
-      <div className="sideBar__links" onClick={toProductsPage}>
+      </NavLink>
+
+      <NavLink
+        className="sideBar__links"
+        activeClassName="active"
+        to="/products/deals"
+      >
+        <h4>New arrivals</h4>
+      </NavLink>
+      <NavLink
+        className="sideBar__links"
+        activeClassName="active"
+        to="/products/deals"
+      >
         <h4>Deals</h4>
-      </div>
-    </div>
+      </NavLink>
+    </ul>
   );
 };
 

@@ -12,12 +12,14 @@
 }
 
 .sideBar__links {
+    text-decoration: none;
     color: $medGray;
     padding-bottom: 10%;
     border-bottom: 2px solid $productBorderColor;
     h4 {
         width: 95%;
         margin-left: 5%;
+        font-size: 18px;
     }
     &:hover {
         color: $darkOrange;
@@ -26,6 +28,10 @@
     &:last-of-type {
         border: none;
     }
+}
+
+.active {
+    color: $darkOrange;
 }
 
 @media screen and (max-width: 900px) {
