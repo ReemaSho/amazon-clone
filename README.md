@@ -6,6 +6,10 @@ It is powered by [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaS
 
 ![products Page](./src/assets/app-images/products.png)
 
+## Demo
+
+[Amazon-clone](https://keen-darwin-eee05c.netlify.app/)
+
 ## UI Designs
 
 Please Have a look at the link below to see the website's layout for desktop.
