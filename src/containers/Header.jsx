@@ -1,8 +1,8 @@
-import "./sass/Header.scss";
 import Logo from "../components/Header/Logo";
 import Searchbox from "../components/Header/Searchbox";
 import Links from "../components/Header/Links";
 import { useSearchProductsContext } from "../context/SearchProductsContext";
+import "./header.scss";
 const Header = () => {
   const {
     searchValue,

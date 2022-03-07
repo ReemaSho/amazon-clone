@@ -12,7 +12,6 @@ import { SingleProductProvider } from "./context/SingleProductContext";
 import { CategoriesProvider } from "./context/CategoriesContext";
 import { useStateValue } from "./context/StateContext";
 import { auth } from "./Firebase.auth";
-import "./App.scss";
 
 function App() {
   const [{ user }, dispatch] = useStateValue();

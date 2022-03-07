@@ -4,6 +4,7 @@ import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
 import Cart from "./Cart";
 import { auth } from "../../Firebase.auth";
 import { useStateValue } from "../../context/StateContext";
+import "./linksAndCart.scss";
 const Links = ({ mobileSizeClass, desktopSizeClass }) => {
   const [{ user }] = useStateValue();
   const logout = () => {

@@ -1,0 +1,67 @@
+@import "../../containers/sass/colors.scss";
+@import "../../containers/sass/mixins.scss";
+.header__nav {
+    @include alignITemsCenter(row);
+    justify-content: space-evenly;
+    .header__navLink {
+        margin: 3px 10px;
+        color: $white;
+        padding: 5px;
+        text-decoration: none;
+        &:hover {
+            padding: 4px;
+            border: 0.5px inset $white;
+        }
+        .header__option {
+            display: flex;
+            flex-direction: column;
+            margin: 0 10px;
+            .header__optionLineOne {
+                @include fontStyle(15px, 16px, 400);
+            }
+            .header__optionLineTwo {
+                @include fontStyle(15px, 17px, 800);
+            }
+        }
+        .header__optionCart {
+            @include alignITemsCenter(row);
+            font-weight: bolder;
+            .header__CartCount {
+                margin: 0 3px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .header__nav {
+        .header__navLink {
+            .header__option {
+                flex-direction: row;
+                align-items: center;
+                .header__optionMobile {
+                    margin-left: 5px;
+                    display: flex;
+                    flex-direction: column;
+                    span {
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .header__nav {
+        .header__navLink {
+            margin: 0px;
+            color: $white;
+            padding: 5px;
+            .header__navLink {
+                .header__optionCart {
+                    .header__CartCount {
+                        margin: 0 1px;
+                    }
+                }
+            }
+        }
+    }
+}

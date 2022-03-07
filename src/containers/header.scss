@@ -1,0 +1,28 @@
+@import "./sass/colors.scss";
+@import "./sass/mixins.scss";
+.header__container {
+    background-color: $darkBlue;
+    padding: 0.5%;
+    @include alignITemsCenter(row);
+}
+
+@media screen and (max-width: 600px) {
+    //
+    // .display-mobile {
+    //     display: flex;
+    // }
+    // .display-desktop {
+    //     display: none;
+    // }
+    // //
+    .header {
+        background-color: $darkBlue;
+        padding-bottom: 5px;
+        .header__container {
+            justify-content: space-between;
+            .header__logoLink {
+                width: 70px;
+            }
+        }
+    }
+}

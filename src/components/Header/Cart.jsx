@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import ShoppingCartCheckoutTwoToneIcon from "@mui/icons-material/ShoppingCartCheckoutTwoTone";
 import { trackCartItemsCount } from "../../context/reducer";
 import { useStateValue } from "../../context/StateContext";
+import "./linksAndCart.scss";
 const Cart = () => {
   const [{ Cart }] = useStateValue();
   return (
