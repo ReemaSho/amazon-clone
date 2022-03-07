@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import useCollectionData from "../Hooks/useCollectionData";
 import Products from "../components/products/Products";
 import Sidebar from "../components/Sidebar";
+import Loading from "../components/Loading";
 import Error from "../components/Error";
 const PopularProducts = () => {
   const { collectionDocs, loading, error } = useCollectionData("products");
@@ -23,7 +24,7 @@ const PopularProducts = () => {
     }
   }, [collectionDocs]);
   if (loading) {
-    return null;
+    return <Loading />;
   }
   if (error) {
     return <Error />;

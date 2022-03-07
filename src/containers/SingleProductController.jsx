@@ -4,6 +4,7 @@ import Error from "../components/Error";
 import SingleProduct from "../components/SingleProduct/SingleProduct";
 import AddToCart from "../components/SingleProduct/AddToCart";
 import { useStateValue } from "../context/StateContext";
+import Loading from "../components/Loading";
 const SingleProductController = () => {
   const { document, loading, error } = useSingleProductContext();
   const {
@@ -15,7 +16,7 @@ const SingleProductController = () => {
   } = useProductPriceAndRating(document);
   const [, dispatch] = useStateValue();
   if (loading) {
-    return null;
+    return <Loading />;
   }
   if (document) {
     const {

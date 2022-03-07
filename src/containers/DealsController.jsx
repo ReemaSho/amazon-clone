@@ -3,6 +3,7 @@ import useCollectionData from "../Hooks/useCollectionData";
 import Products from "../components/products/Products";
 import Sidebar from "../components/Sidebar";
 import Error from "../components/Error";
+import Loading from "../components/Loading";
 import "./sass/products.scss";
 const DealsController = () => {
   const { collectionDocs, loading, error } = useCollectionData("products");
@@ -15,17 +16,20 @@ const DealsController = () => {
     }
   }, [collectionDocs]);
   if (loading) {
-    return null;
+    return <Loading />;
   }
   if (error) {
     return <Error />;
   }
-  return (
-    <div className="productsController">
-      <Sidebar />
-      <Products products={dealsProducts} />
-    </div>
-  );
+  if (dealsProducts.length) {
+    return (
+      <div className="productsController">
+        <Sidebar />
+        <Products products={dealsProducts} />
+      </div>
+    );
+  }
+  return <Error />;
 };
 
 export default DealsController;

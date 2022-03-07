@@ -2,13 +2,14 @@ import Products from "../components/products/Products";
 import Sidebar from "../components/Sidebar";
 import { useCategoriesContext } from "../context/CategoriesContext";
 import Error from "../components/Error";
+import Loading from "../components/Loading";
 import "./sass/products.scss";
 
 const ProductsCategory = () => {
   const { categoryProducts, loading, error } = useCategoriesContext();
 
   if (loading) {
-    return null;
+    return <Loading />;
   }
   if (error) {
     return <Error />;

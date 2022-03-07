@@ -18,7 +18,7 @@ const CarouselSlider = () => {
       showStatus={false}
       infiniteLoop={true}
       swipeable={true}
-      dynamicHeight={true}
+      dynamicHeight={false}
     >
       <div className="CarouselSlider">
         <img className="carouselImage" src={image1} alt="" />
