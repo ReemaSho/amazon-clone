@@ -1,5 +1,6 @@
 export const initialState = {
     Cart: [],
+    user: null,
 };
 export const getCartTotal = (cart) => {
     if (cart.length) {
@@ -28,6 +29,8 @@ export const trackCartItemsCount = (cart) => {
 
 const reducer = (state, action) => {
     switch (action.type) {
+        case "SET_USER":
+            return {...state, user: action.user };
         case "ADD_TO_CART":
             let newAddCart = [...state.Cart];
 

@@ -129,6 +129,22 @@
     }
     .header__nav {
         .header__navLink {
+            .header__option {
+                flex-direction: row;
+                align-items: center;
+                .header__optionMobile {
+                    margin-left: 5px;
+                    display: flex;
+                    flex-direction: column;
+                    span {
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .header__nav {
+        .header__navLink {
             margin: 0px;
             color: $white;
             padding: 5px;

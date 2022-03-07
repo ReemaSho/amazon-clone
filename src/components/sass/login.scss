@@ -1,0 +1,87 @@
+@import "../../containers/sass/colors.scss";
+@import "../../containers/sass/mixins.scss";
+.login {
+    background-color: $white;
+    height: 100vh;
+    @include alignITemsCenter(column);
+}
+
+.login__logo {
+    width: 200px;
+    object-fit: contain;
+    height: 200px;
+}
+
+.login__container {
+    position: relative;
+    top: -40px;
+    width: 350px;
+    @include alignITemsCenter(column);
+    border: 1px solid $productBorderColor;
+    padding: 20px;
+    h1 {
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+    p {
+        margin-top: 15px;
+        font-size: 12px;
+    }
+    .login__registerBtn {
+        color: $cardFontColor;
+        width: 100%;
+        margin-top: 10px;
+        font-size: 15px;
+        height: 30px;
+        border: 1px solid $productBorderColor;
+        border-radius: 2px;
+        justify-self: center;
+        &:hover {
+            cursor: pointer;
+            background-color: #f7c139;
+        }
+    }
+}
+
+.login__container {
+    form {
+        .display {
+            display: block;
+        }
+        .display_none {
+            display: none;
+        }
+        h5 {
+            margin-bottom: 5px;
+        }
+        input {
+            font-size: 15px;
+            height: 30px;
+            margin-bottom: 10px;
+            border: 2px solid $productBorderColor;
+            width: 98%;
+            &:focus {
+                border-color: $darkOrange !important;
+            }
+            &:focus-within {
+                border-color: $darkOrange !important;
+            }
+        }
+        .login__signInBtn {
+            color: $cardFontColor;
+            width: 100%;
+            margin-top: 10px;
+            font-size: 16px;
+            height: 30px;
+            border: 1px solid $cartBtnBg;
+            border-radius: 2px;
+            justify-self: center;
+            background: #f0c14b;
+            border-color: #a88734 #9c7e31 #846a29;
+            &:hover {
+                cursor: pointer;
+                background-color: #f7c139;
+            }
+        }
+    }
+}
