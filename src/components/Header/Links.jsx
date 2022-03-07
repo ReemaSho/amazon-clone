@@ -1,32 +1,48 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import PersonOutlineIcon from "@mui/icons-material/PersonOutline";
-import Basket from "./Basket";
-
-const Links = ({ mobileSize, desktopSize }) => {
-  const mobileSizeClasses = `${mobileSize} header__navLink`;
-  const desktopSizeClasses = `${desktopSize} header__navLink`;
+import Cart from "./Cart";
+import { auth } from "../../Firebase.auth";
+import { useStateValue } from "../../context/StateContext";
+import "./linksAndCart.scss";
+const Links = ({ mobileSizeClass, desktopSizeClass }) => {
+  const [{ user }] = useStateValue();
+  const logout = () => {
+    auth.signOut();
+  };
+  const mobileSizeClasses = `${mobileSizeClass} header__navLink`;
+  const desktopSizeClasses = `${desktopSizeClass} header__navLink`;
 
   return (
     <div className="header__nav">
-      <Link className={desktopSizeClasses} to="/Login">
-        <div className="header__option">
-          <span className="header__optionLineOne">Hello, sign in</span>
-          <span className="header__optionLineTwo">Account & Lists</span>
+      <Link className={desktopSizeClasses} to={!user && "/Login"}>
+        <div onClick={logout} className="header__option">
+          <span className="header__optionLineOne">
+            Hello{user && `,${user.email}`}
+          </span>
+          <span className="header__optionLineTwo">
+            {user ? "Sign Out" : "Sign in"}
+          </span>
         </div>
       </Link>
-      <Link className={desktopSizeClasses} to="/Login">
+      <Link className={desktopSizeClasses} to={!user && "/Login"}>
         <div className="header__option">
           <span className="header__optionLineOne">Returns</span>
           <span className="header__optionLineTwo">& Orders</span>
         </div>
       </Link>
-      <Link className={mobileSizeClasses} to="/Login">
-        <div className="header__option">
+      <Link className={mobileSizeClasses} to={!user && "/Login"}>
+        <div onClick={logout} className="header__option">
           <PersonOutlineIcon />
+          <div className="header__optionMobile">
+            <span className="header__optionLineOne">{user && user.email}</span>
+            <span className="header__optionLineTwo">
+              {user ? "Sign Out" : "Sign in"}
+            </span>
+          </div>
         </div>
       </Link>
-      <Basket />
+      <Cart />
     </div>
   );
 };

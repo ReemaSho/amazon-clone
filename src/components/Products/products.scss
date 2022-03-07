@@ -1,0 +1,25 @@
+@import "../../containers/sass/colors.scss";
+@import "../../containers/sass/mixins.scss";
+.products {
+    @include alignITemsCenter(row);
+    flex-wrap: wrap;
+    width: 85%;
+    justify-content: space-around;
+    padding: 5px;
+}
+
+@media screen and (max-width: 900px) {
+    .product {
+        .product__details {
+            @include fontStyle(14px, 18px, lighter);
+        }
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .products {
+        @include alignITemsCenter(column);
+        flex-wrap: nowrap;
+        width: 98%;
+    }
+}

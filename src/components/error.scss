@@ -1,0 +1,11 @@
+@import "../containers/sass/mixins.scss";
+.error {
+    @include alignITemsCenter(column);
+    padding: 5%;
+    .error__imageText {
+        width: 80%;
+    }
+    .error__imageDog {
+        width: 60%;
+    }
+}

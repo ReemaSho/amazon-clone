@@ -1,0 +1,16 @@
+@import "./colors.scss";
+@mixin alignITemsCenter($direction) {
+    display: flex;
+    align-items: center;
+    flex-direction: $direction;
+}
+
+@mixin fontStyle($size, $line-Height, $weight) {
+    font-size: $size;
+    line-height: $line-Height;
+    font-weight: $weight;
+}
+
+@mixin boxShadowLightGray {
+    box-shadow: 0 2px 5px 0 $boxShadowColor;
+}

@@ -1,0 +1,90 @@
+@import "../../containers/sass/colors.scss";
+@import "../../containers/sass/mixins.scss";
+.product {
+    width: 45%;
+    height: 350px;
+    margin: 5px 0px;
+    @include alignITemsCenter(row);
+    border: 1px solid $productBorderColor;
+    @include boxShadowLightGray();
+    .product__imageContainer {
+        @include alignITemsCenter(row);
+        justify-content: center;
+        background-color: $white;
+        height: 100%;
+        width: 40%;
+        padding: 2%;
+        .product__image {
+            height: 80%;
+            width: 100%;
+            mix-blend-mode: multiply;
+            overflow: hidden;
+            object-fit: contain;
+            &:hover {
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.product {
+    .product__details {
+        padding: 0% 5% 0% 5%;
+        width: 60%;
+        color: $cardFontColor;
+        @include fontStyle(16px, 20px, lighter);
+        .product__title {
+            color: $cardFontColor;
+            text-decoration: none;
+            margin-bottom: 5px;
+            &:hover {
+                color: $darkOrange;
+                cursor: pointer;
+            }
+        }
+        .product__rating {
+            color: $darkOrange;
+        }
+        .product__price {
+            color: $cardFontColor;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            @include fontStyle(18px, 20px, 100);
+            &:hover {
+                cursor: pointer;
+            }
+            .product__priceFire {
+                margin-left: 5px;
+                color: $darkOrange;
+            }
+            .display_none {
+                display: none;
+            }
+        }
+        .product__extraDetails {
+            p {
+                margin: 0;
+            }
+            @include fontStyle(smaller, 20px, 100);
+            color: $medGray;
+        }
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .product {
+        .product__details {
+            @include fontStyle(12px, 18px, lighter);
+        }
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .product {
+        width: 100%;
+        .product__details {
+            @include fontStyle(10px, 12px, lighter);
+        }
+    }
+}

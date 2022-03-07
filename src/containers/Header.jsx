@@ -1,18 +1,39 @@
-import React from "react";
-import "./css/Header/Header.css";
 import Logo from "../components/Header/Logo";
 import Searchbox from "../components/Header/Searchbox";
 import Links from "../components/Header/Links";
-
+import { useSearchProductsContext } from "../context/SearchProductsContext";
+import "./header.scss";
 const Header = () => {
+  const {
+    searchValue,
+    getSearchValue,
+    handleSearchEvent,
+    handleKeyPress,
+    emptySearchStates,
+  } = useSearchProductsContext();
   return (
     <div className="header">
       <nav className="header__container">
-        <Logo />
-        <Searchbox screenSize="display-desktop" />
-        <Links desktopSize="display-desktop" mobileSize="display-mobile" />
+        <Logo emptySearchStates={emptySearchStates} />
+        <Searchbox
+          searchValue={searchValue}
+          getSearchValue={getSearchValue}
+          handleSearchEvent={handleSearchEvent}
+          handleKeyPress={handleKeyPress}
+          screenSizeClass="display-desktop"
+        />
+        <Links
+          desktopSizeClass="display-desktop"
+          mobileSizeClass="display-mobile"
+        />
       </nav>
-      <Searchbox screenSize="display-mobile" />
+      <Searchbox
+        searchValue={searchValue}
+        getSearchValue={getSearchValue}
+        handleSearchEvent={handleSearchEvent}
+        handleKePress={handleKeyPress}
+        screenSizeClass="display-mobile"
+      />
     </div>
   );
 };

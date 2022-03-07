@@ -1,0 +1,12 @@
+.homePage {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: -150px;
+}
+
+@media screen and (max-width: 720px) {
+    .homePage {
+        top: 0px;
+    }
+}
