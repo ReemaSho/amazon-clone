@@ -2,6 +2,7 @@ import Header from "../containers/Header";
 import Sidebar from "../components/Sidebar";
 import CarouselSlider from "../components/CarouselSlider";
 import Cards from "../components/Home/Cards";
+import Footer from "../components/Footer";
 import "./sass/homePage.scss";
 
 const Home = () => {
@@ -14,6 +15,7 @@ const Home = () => {
         <Sidebar />
         <Cards />
       </div>
+      <Footer />
     </>
   );
 };
